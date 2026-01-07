@@ -370,31 +370,31 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-center space-y-6">
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="relative bg-gradient-to-br from-green-950/50 to-gray-950 border-2 border-green-500/50 rounded-xl p-8 overflow-hidden group hover:border-green-500 transition-all">
+          <div className="text-center space-y-4">
+            <div className="space-y-3 max-w-3xl mx-auto">
+              <div className="relative bg-gradient-to-br from-green-950/50 to-gray-950 border-2 border-green-500/50 rounded-xl p-6 overflow-hidden group hover:border-green-500 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all"></div>
                 <div className="relative">
-                  <div className="flex items-center justify-center mb-4">
+                  <div className="flex items-center justify-center mb-3">
                     <div className="bg-green-500/20 border border-green-500/50 text-green-400 font-bold text-sm px-4 py-1.5 rounded-full uppercase tracking-wide">
                       Our Guarantee
                     </div>
                   </div>
-                  <p className="text-white text-xl font-semibold text-center">
+                  <p className="text-white text-lg font-semibold text-center">
                     If we can't identify 3 clear AI opportunities and 1 best "first move," we'll extend the session to 60 minutes.
                   </p>
                 </div>
               </div>
 
-              <div className="relative bg-gradient-to-br from-red-950/50 to-gray-950 border-2 border-red-500/50 rounded-xl p-8 overflow-hidden group hover:border-red-500 transition-all">
+              <div className="relative bg-gradient-to-br from-red-950/50 to-gray-950 border-2 border-red-500/50 rounded-xl p-6 overflow-hidden group hover:border-red-500 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/10 rounded-full blur-3xl group-hover:bg-red-500/20 transition-all"></div>
                 <div className="relative">
-                  <div className="flex items-center justify-center mb-4">
+                  <div className="flex items-center justify-center mb-3">
                     <div className="bg-red-500/20 border border-red-500/50 text-red-400 font-bold text-sm px-4 py-1.5 rounded-full uppercase tracking-wide">
                       Limited Availability
                     </div>
                   </div>
-                  <p className="text-white text-xl font-semibold text-center">
+                  <p className="text-white text-lg font-semibold text-center">
                     To keep plans custom and delivered within 48 hours, we only create <span className="text-red-400 font-bold">10 AI Plans per week</span>.
                   </p>
                 </div>
