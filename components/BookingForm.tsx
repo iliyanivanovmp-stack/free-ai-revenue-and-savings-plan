@@ -69,8 +69,8 @@ const BookingForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-5 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="space-y-2">
           <Label htmlFor="firstName" className="text-gray-300">First Name *</Label>
           <Input
@@ -92,29 +92,29 @@ const BookingForm = () => {
             className="bg-gray-900 border-gray-800 text-white"
           />
         </div>
-      </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="companyName" className="text-gray-300">Company Name *</Label>
-        <Input
-          id="companyName"
-          required
-          value={formData.companyName}
-          onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-          className="bg-gray-900 border-gray-800 text-white"
-        />
-      </div>
+        <div className="space-y-2">
+          <Label htmlFor="companyName" className="text-gray-300">Company Name *</Label>
+          <Input
+            id="companyName"
+            required
+            value={formData.companyName}
+            onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+            className="bg-gray-900 border-gray-800 text-white"
+          />
+        </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="website" className="text-gray-300">Website (Optional)</Label>
-        <Input
-          id="website"
-          type="url"
-          value={formData.website}
-          onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-          className="bg-gray-900 border-gray-800 text-white"
-          placeholder="https://"
-        />
+        <div className="space-y-2">
+          <Label htmlFor="website" className="text-gray-300">Website (Optional)</Label>
+          <Input
+            id="website"
+            type="url"
+            value={formData.website}
+            onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+            className="bg-gray-900 border-gray-800 text-white"
+            placeholder="https://"
+          />
+        </div>
       </div>
 
       <div className="space-y-2">
@@ -129,30 +129,32 @@ const BookingForm = () => {
         />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="bottleneck" className="text-gray-300">
-          Biggest bottleneck in your business (Optional)
-        </Label>
-        <Textarea
-          id="bottleneck"
-          value={formData.biggestBottleneck}
-          onChange={(e) => setFormData({ ...formData, biggestBottleneck: e.target.value })}
-          placeholder="Describe your biggest bottleneck..."
-          className="bg-gray-900 border-gray-800 text-white min-h-[80px]"
-        />
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="space-y-2">
+          <Label htmlFor="bottleneck" className="text-gray-300">
+            Biggest bottleneck in your business (Optional)
+          </Label>
+          <Textarea
+            id="bottleneck"
+            value={formData.biggestBottleneck}
+            onChange={(e) => setFormData({ ...formData, biggestBottleneck: e.target.value })}
+            placeholder="Describe your biggest bottleneck..."
+            className="bg-gray-900 border-gray-800 text-white min-h-[100px]"
+          />
+        </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="win" className="text-gray-300">
-          What would make this a win? (Optional)
-        </Label>
-        <Textarea
-          id="win"
-          value={formData.whatWouldMakeThisAWin}
-          onChange={(e) => setFormData({ ...formData, whatWouldMakeThisAWin: e.target.value })}
-          placeholder="More leads, faster delivery, less admin, lower costs, etc."
-          className="bg-gray-900 border-gray-800 text-white min-h-[100px]"
-        />
+        <div className="space-y-2">
+          <Label htmlFor="win" className="text-gray-300">
+            What would make this a win? (Optional)
+          </Label>
+          <Textarea
+            id="win"
+            value={formData.whatWouldMakeThisAWin}
+            onChange={(e) => setFormData({ ...formData, whatWouldMakeThisAWin: e.target.value })}
+            placeholder="More leads, faster delivery, less admin, lower costs, etc."
+            className="bg-gray-900 border-gray-800 text-white min-h-[100px]"
+          />
+        </div>
       </div>
 
       <motion.div
