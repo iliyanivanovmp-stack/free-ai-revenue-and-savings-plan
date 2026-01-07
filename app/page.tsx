@@ -371,15 +371,6 @@ export default function Home() {
           </div>
 
           <div className="text-center space-y-6">
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: '#e5e5e5' }}
-              whileTap={{ scale: 0.95 }}
-              onClick={openCalendly}
-              className="bg-white text-black font-bold px-8 py-3 transition-colors uppercase text-sm tracking-wide"
-            >
-              Get My Free AI Plan
-            </motion.button>
-
             <div className="space-y-4 max-w-3xl mx-auto">
               <div className="relative bg-gradient-to-br from-green-950/50 to-gray-950 border-2 border-green-500/50 rounded-xl p-8 overflow-hidden group hover:border-green-500 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all"></div>
@@ -409,6 +400,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: '#e5e5e5' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={openCalendly}
+              className="bg-white text-black font-bold px-12 py-4 transition-colors uppercase text-base tracking-wide"
+            >
+              Get My Free AI Plan
+            </motion.button>
           </div>
         </div>
       </section>
@@ -553,8 +553,8 @@ export default function Home() {
       {/* Section 7: Final CTA */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
         <div
-          className="absolute inset-0 opacity-[0.3] bg-center bg-no-repeat bg-contain"
-          style={{ backgroundImage: 'url(/wireframerocket_bg_0d0d0d.png)', backgroundPosition: 'center 30%' }}
+          className="absolute inset-0 opacity-[0.15] bg-center bg-no-repeat bg-cover"
+          style={{ backgroundImage: 'url(/wireframerocket_bg_0d0d0d.png)' }}
         />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
