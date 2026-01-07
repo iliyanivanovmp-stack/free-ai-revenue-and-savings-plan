@@ -7,7 +7,6 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { supabase } from '@/lib/supabase';
 import { useToast } from '@/hooks/use-toast';
-import { motion } from 'framer-motion';
 
 const BookingForm = () => {
   const { toast } = useToast();
@@ -157,18 +156,13 @@ const BookingForm = () => {
         </div>
       </div>
 
-      <motion.div
-        whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-        whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-white hover:bg-gray-200 text-black font-bold text-lg py-6 uppercase tracking-wide transition-all hover:scale-[1.02] active:scale-[0.98]"
       >
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-white hover:bg-gray-200 text-black font-bold text-lg py-6 uppercase tracking-wide transition-colors"
-        >
-          {isSubmitting ? 'Submitting...' : 'Get My Free AI Plan'}
-        </Button>
-      </motion.div>
+        {isSubmitting ? 'Submitting...' : 'Get My Free AI Plan'}
+      </Button>
     </form>
   );
 };
