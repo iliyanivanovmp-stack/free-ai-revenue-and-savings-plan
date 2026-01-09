@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, X } from 'lucide-react';
 import ROIAnalysisGraphic from '@/components/ROIAnalysisGraphic';
 import BookingForm from '@/components/BookingForm';
 import Header from '@/components/Header';
@@ -12,6 +12,7 @@ import { InteractiveRobot } from '@/components/InteractiveRobot';
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [showGuarantee, setShowGuarantee] = useState(false);
 
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
@@ -249,6 +250,21 @@ export default function Home() {
               <p className="text-gray-300">Lifetime access to a bonus free consultation call</p>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mt-6"
+          >
+            <button
+              onClick={() => setShowGuarantee(true)}
+              className="text-gray-400 hover:text-white transition-colors text-sm underline"
+            >
+              Our Money-Back Guarantee
+            </button>
+          </motion.div>
         </div>
       </section>
 
@@ -408,6 +424,15 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className="text-center mt-6">
+              <button
+                onClick={() => setShowGuarantee(true)}
+                className="text-gray-400 hover:text-white transition-colors text-sm underline"
+              >
+                Our Money-Back Guarantee
+              </button>
             </div>
           </div>
         </div>
@@ -603,6 +628,90 @@ export default function Home() {
       </section>
 
       <Footer />
+
+      {showGuarantee && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            className="bg-gray-900 border border-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+          >
+            <div className="flex justify-between items-center p-6 border-b border-gray-800">
+              <h2 className="text-2xl font-bold text-white">Money-back Guarantee</h2>
+              <button
+                onClick={() => setShowGuarantee(false)}
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="overflow-y-auto p-6 text-gray-300 text-sm leading-relaxed space-y-6">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">Aiessentials — 60-Day Money-Back Guarantee (Performance Guarantee Terms)</h3>
+                <p className="text-gray-400">Website: aiessentials.us</p>
+                <p className="text-gray-400">Operator: IvanovIv LLC, 30 N Gould St Ste N, Sheridan, WY 82801</p>
+                <p className="text-gray-400 mt-2">Effective date: October 31, 2025</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">1) What you're buying</h4>
+                <p>You are purchasing a custom AI system designed after a discovery call (the "Solution"). We'll send a short Solution Summary (email or PDF) listing deliverables and any access we need.</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">2) Our guarantee</h4>
+                <p className="mb-3">If you don't achieve the agreed Desired Results within 60 days of Kickoff, we'll refund your service fee.</p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li><strong>Kickoff</strong> = the later of (a) the date we send the Solution Summary, or (b) the date we receive all required access/inputs.</li>
+                  <li><strong>Desired Results</strong> = the single measurable target in Exhibit A (baseline + target metric).</li>
+                  <li><strong>60 days</strong> = 60 consecutive calendar days from Kickoff.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">3) Your part (conditions)</h4>
+                <p className="mb-3">To qualify for a refund, you agree to:</p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Approve Exhibit A (goal, baseline, metric, data source).</li>
+                  <li>Provide timely access to accounts, data, and tools within 5 business days of request.</li>
+                  <li>Implement the changes/automations we deliver (or document blockers in writing).</li>
+                  <li>Run at reasonable volume (see Exhibit A minimums) so results are measurable.</li>
+                  <li>Avoid conflicting changes that defeat measurement without notifying us.</li>
+                </ul>
+                <p className="mt-3 italic text-gray-400">Disclosure note: When advertising a "money-back guarantee," disclose these material conditions clearly wherever you make the claim (e.g., checkout, sales page).</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">4) How to claim</h4>
+                <p className="mb-3">Email info@aiessentials.us with subject "Guarantee Refund Request" within 10 days after the 60‑day period, attaching:</p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>the approved Exhibit A, and</li>
+                  <li>a dashboard/report showing results vs. target, and</li>
+                  <li>a short note confirming you met the conditions above.</li>
+                </ul>
+                <p className="mt-3">We'll approve/deny within 10 business days and, if approved, refund to the original payment method within 5 business days.</p>
+                <p className="mt-3"><strong>Processor fees:</strong> Card processors like Stripe typically do not return processing fees on refunds. Our default is to refund your full service fee and we absorb Stripe's fee, unless Exhibit A says otherwise.</p>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">5) Exclusions</h4>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Third‑party spend (APIs, SaaS, ad spend) isn't refundable.</li>
+                  <li>Force‑majeure/platform outages aren't covered.</li>
+                  <li>If Section 3 isn't met, the guarantee doesn't apply.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">6) Informal resolution & governing law</h4>
+                <p>We'll try to resolve issues informally within 14 days of written notice. Governing law: Wyoming, USA.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
